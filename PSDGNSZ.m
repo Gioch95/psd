@@ -2,8 +2,8 @@ function [pxx,f,B]=PSDFNSZ(Y,B,fs)
 load('B')
 
 %matrice 3 dimensioni con zeros
-inDir='C:\Users\gioiachiodi\Documents\MATLAB\FNSZ 30 secondi\';%segnale non filtrato
-outDir='C:\Users\gioiachiodi\Documents\MATLAB\FNSZPSD\';%qui ho inserito un \ in più
+inDir='C:\Users\gioiachiodi\Documents\MATLAB\GNSZ 30 secondi\';%segnale non filtrato
+outDir='C:\Users\gioiachiodi\Documents\MATLAB\GNSZPSD\';%qui ho inserito un \ in più
 fs=250;
 estensione='*.mat';
 cases=dir(fullfile(inDir,estensione));
@@ -15,7 +15,7 @@ for i=1:length(cases)
             
              
      %MATRICE (epoche,chan,bande)
-     [pxx,f]=pwelch(Y(k,(j-1)*fs*5+1:j*fs*5)',[],0,[],fs);%j-1
+     [pxx,f]=pwelch(Y(k,(j-1)*fs*5+1:j*fs*5)',[],0,[],fs);
     
      %matrice con epoche,canali, bande mat[epoch,chan,bande]
      %si calcola la psd; %frequenze di taglio delle singole bande 
